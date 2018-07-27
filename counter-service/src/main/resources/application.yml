@@ -1,0 +1,74 @@
+server:
+  port: 9010
+  servlet:
+    context-path: /
+
+---
+spring:
+  profiles: local
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:9092
+      bindings:
+        counter-target:
+          group: counter-service
+          destination: counter
+        counter-source:
+          destination: counter
+  redis-host: 127.0.0.1:6379
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      healthcheck:
+        enabled: true
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+    statusPageUrlPath: ${server.servlet.context-path}info
+    healthCheckUrlPath: ${server.servlet.context-path}health
+    metadataMap:
+        deployment: local
+        profile: local
+
+---
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_HOST}:27017/test
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_HOST}:9092
+      bindings:
+        counter-target:
+          group: counter-service
+          destination: counter
+        counter-source:
+          destination: counter
+  redis-host: ${REDIS_HOST}:6379
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST}:8761/eureka/
+      healthcheck:
+        enabled: true
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+    statusPageUrlPath: ${server.servlet.context-path}info
+    healthCheckUrlPath: ${server.servlet.context-path}health
+    metadataMap:
+        deployment: docker
+        profile: docker
+

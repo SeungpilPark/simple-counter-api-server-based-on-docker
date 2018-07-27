@@ -1,0 +1,13 @@
+spring:
+  application:
+      name: counter-service
+  profiles:
+    active: local
+
+---
+spring:
+  profiles: local
+
+---
+spring:
+  profiles: dev
