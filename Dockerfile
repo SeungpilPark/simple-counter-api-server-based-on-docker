@@ -18,7 +18,7 @@ RUN yum -y install nodejs
 
 COPY ./ /project/
 RUN cd /project & npm install express --save
-RUN chmod +x /project/entrypoint.sh
+RUN chmod -R +x /project
 
-EXPOSE 80 3000 8761
+EXPOSE 80 3000 8761 6379
 CMD ["/project/entrypoint.sh"]

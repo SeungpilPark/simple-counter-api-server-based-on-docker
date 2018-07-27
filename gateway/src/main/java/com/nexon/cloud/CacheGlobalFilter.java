@@ -48,6 +48,7 @@ public class CacheGlobalFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         //cache key
         String requestUri = exchange.getRequest().getURI().toString();
+        String path = exchange.getRequest().getPath().toString();
 
         //All Get Method using cache logic.
         if (exchange.getRequest().getMethod().equals(HttpMethod.GET)) {
@@ -84,7 +85,7 @@ public class CacheGlobalFilter implements GlobalFilter, Ordered {
                     public Mono<Void> writeWith(Publisher<? extends DataBuffer> body) {
 
                         //if 200 status, save cache
-                        if (this.getStatusCode().equals(HttpStatus.OK)) {
+                        if (this.getStatusCode().equals(HttpStatus.OK) && path.length() > 1) {
                             if (body instanceof Flux) {
                                 Flux<? extends DataBuffer> fluxBody = (Flux<? extends DataBuffer>) body;
 

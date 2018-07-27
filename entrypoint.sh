@@ -6,8 +6,8 @@ bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:2375/_pi
 
 echo "Docker boot end"
 
-node /project/index.js &
-
 cd /project
+
+node index.js &
 
 docker-compose up

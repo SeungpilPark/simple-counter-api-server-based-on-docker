@@ -8,6 +8,4 @@ import reactor.core.publisher.Mono;
 public interface CounterRepository extends ReactiveCrudRepository<Counter, String> {
 
     Mono<Counter> findByUuid(String uuid);
-
-    Mono<Void> deleteByUuid(String uuid);
 }
