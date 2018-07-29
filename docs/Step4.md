@@ -55,7 +55,7 @@ There is nothing special, and it is the same as the explanation of [Step1](Step1
 2. When request started, check if all server is down.
 3. If yes, gateway load cache from redis.
 4. If no, gateway proxy to counter-service
-5. After proxy, if 200 ok 
+5. After proxy, if 200 ok
 3. Sends a message immediately to the Kafka for each stream data.
 4. All microservices receive kafka message and actual operation code is executed.
 
