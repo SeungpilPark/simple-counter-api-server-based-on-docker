@@ -121,5 +121,4 @@ public class CacheGlobalFilter implements GlobalFilter, Ordered {
     public void saveCache(String requestUri, byte[] content, Map headers) {
         cacheService.save(requestUri, content, headers);
     }
-
 }
