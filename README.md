@@ -1,4 +1,4 @@
-- [Introduce](docs/README.md)
+- [Introduce & Installation](docs/README.md)
 - [Step1](docs/Step1.md)
 - [Step2](docs/Step2.md)
 - [Step3](docs/Step3.md)

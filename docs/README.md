@@ -20,6 +20,8 @@ data such as. git directory) or Provide an URL of a private GitHub repository
 
 ## Assignment video
 
+*https://www.youtube.com/embed/Go7MGcnh45I*
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Go7MGcnh45I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
