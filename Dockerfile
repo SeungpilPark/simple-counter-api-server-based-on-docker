@@ -20,5 +20,5 @@ COPY ./ /project/
 RUN cd /project & npm install express --save
 RUN chmod -R +x /project
 
-EXPOSE 80 3000 8761 6379
+EXPOSE 3000
 CMD ["/project/entrypoint.sh"]

@@ -71,12 +71,10 @@ services:
       REDIS_HOST: redis
 
   nginx:
-     image: nginx:latest
+     build: ./nginx/
      ports:
        - "80:80"
      restart: always
-     volumes:
-       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
 
 volumes:
   data-volume:

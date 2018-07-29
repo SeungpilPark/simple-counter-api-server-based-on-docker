@@ -1,1 +1,1 @@
-* [Tutorial](edu/)
+* [Tutorial](README.md)

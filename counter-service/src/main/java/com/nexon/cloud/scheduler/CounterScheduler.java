@@ -16,7 +16,7 @@ import reactor.core.scheduler.Schedulers;
 import java.util.Date;
 
 /**
- * Created by uengine on 2017. 12. 4..
+ * Created by sppark on 2017. 12. 4..
  */
 @Component
 public class CounterScheduler {
