@@ -2,7 +2,7 @@
 
 <img src="Nexon_Logo.jpg" width="150px">
 
-# Nexon Assignment <small>1.0</small>
+# Assignment <small>1.0</small>
 
 > Non blocking Api-service Example site.
 

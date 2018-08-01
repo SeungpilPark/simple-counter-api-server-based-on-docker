@@ -28,7 +28,6 @@
         <module>eureka</module>
         <module>gateway</module>
         <module>counter-service</module>
-        <module>kakao</module>
     </modules>
 
     <repositories>
